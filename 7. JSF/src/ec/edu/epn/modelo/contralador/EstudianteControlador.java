@@ -10,10 +10,5 @@ import ec.edu.epn.modelo.entity.Estudiante;
 @SessionScoped
 public class EstudianteControlador {
 
-	private DAOFactory daoFactory;
-	private ProfesorDAO profesorDAO;
-	private EstudianteDAO estudianteDAO;
-	private TutoriaDAO tutoriaDAO;
-	private List<Tutoria> tutorias;
-
+	
 }
