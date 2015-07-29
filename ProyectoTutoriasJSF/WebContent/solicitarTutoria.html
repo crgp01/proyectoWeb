@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Documento sin título</title>
+<link href="css/stylos.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div>
+    <div id="banner">
+        <div id="logo"></div>
+        <div id="nombresite">Tutorias FIS <br/><span>Facultad de Ingeniería de Sistemas</span></div>
+    </div>
+    <div id="barmenu"></div>
+</div>
+<div id="contenido">
+<div class="titulopagina">
+<div><h2>Solicitud de Tutoría</h2></div>
+<form method="GET" action="">
+    <fieldset>
+        <legend>Solicitar Tutoría</legend>
+            <label>Seleccione Docente</label>
+            <select>
+                <option>opcion 1</option>
+                <option>opcion 1</option>
+            </select>
+        <label>Seleccione Día</label>
+        <select name="cmbDia">
+            <option>opcion 1</option>
+            <option>opcion 1</option>
+        </select>
+        <label>Indique la temática a tratar <span style="font-size:10px">(máx:300 caracteres)</span>:</label>
+                <div class="spacio"></div>
+        <textarea cols="100" rows="14" name="txtTematica"></textarea>
+        <input type="submit" value="Reservar Tutoría"/>
+    </fieldset>
+</form>
+</div>
+</body>
+</html>
