@@ -10,7 +10,7 @@ public class Principal {
 		
 		EntityManagerFactory emf;
 		EntityManager em;
-		emf = Persistence.createEntityManagerFactory("5-JPATutoria");
+		emf = Persistence.createEntityManagerFactory("ProyectoTutoriasJSF");
 		em = emf.createEntityManager();
 		
 		Departamento dep = new Departamento();

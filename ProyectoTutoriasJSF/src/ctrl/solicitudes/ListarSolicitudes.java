@@ -3,15 +3,17 @@ package ctrl.solicitudes;
 import java.util.List;
 
 import javax.annotation.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import modelo.entity.Tutoria;
 import modelo.jpa.JPADAOFactory;
 
 @ManagedBean
-public class TutoriasListar {
+@SessionScoped
+public class ListarSolicitudes {
 	private List<Tutoria> tutoriasList;
 	//Constructor
-	public TutoriasListar(){
+	public ListarSolicitudes(){
 	}
 	//Propiedades
 	public List<Tutoria> getTutoriasList() {
@@ -26,22 +28,4 @@ public class TutoriasListar {
 	public void setTutoriasList(List<Tutoria> tutoriasList) {
 		this.tutoriasList = tutoriasList;
 	}
-	
-	//Acciones
-	public String ListarSolicitudes(){
-		return null;
-	}
-	public String RechazarSolicitudes(){
-		return null;
-	}
-	public String SolicitarTutorias(){
-		return null;
-	}
-	public String AceptarTutorias(){
-		return null;
-	}
-
-
-
-	
 }
