@@ -34,7 +34,7 @@
 					<input type="submit" value="Listar Tutorias" />
 				</form>
 				<input type="button" value="Solicitar Tutoria"
-					onclick="window.location.href='tutoriaslist.xhtml'" />
+					onclick="window.location.href='listarTutorias.jsp'" />
 			</fieldset>
 		</div>
 

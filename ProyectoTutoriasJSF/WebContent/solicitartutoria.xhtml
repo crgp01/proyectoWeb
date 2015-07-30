@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+	
+<h:head>
+	<link rel="stylesheet" href="css/estilos.css" />
+	<h1 class="titulo">Solicitar tutoría</h1>
+</h:head>
+	<h:form class= "forma">
+		 <fieldset><legend><label  for= "nombre" class="subtitulo"> Ingrese los siguientes campos: </label><br/></legend>
+		 <h:outputLabel value="Nombre estudiante: " />
+		 <p:inputText value="#{solicitarTutoria.tutoria.estudiate.nombre}" /><br/>
+		<h:outputLabel value="Apellido estudiante:: " />
+		 <p:inputText value="#{solicitarTutoria.tutoria.estudiate.apellido}" /><br/>
+		<h:outputLabel value="Nombre profesor: " />
+		 <p:inputText value="#{solicitarTutoria.tutoria.profesor.nombre}"/><br/>
+		 <h:outputLabel value="Apellido profesor: " />
+		 <p:inputText value="#{solicitarTutoria.tutoria.profesor.apellido}"/><br/>
+		<h:outputLabel value="Temática: " />
+   		 <p:inputTextarea rows="2" cols="24" /><br/>
+		
+		<h:outputLabel value="Fecha: " />
+        <p:calendar id="mask" value="#{solicitarTutoria.tutoria.fecha}" pattern="dd-MM-yyyy" mask="true" />
+		
+	<h:panelGrid columns="5">  
+    <h:outputText value="Hora de Inicio"/>  
+    <pe:timePicker value="#{solicitarTutoria.tutoria.horaInicio}" onHourShow="tpStartOnHourShowCallback" mode="popup"  
+                   onMinuteShow="tpStartOnMinuteShowCallback" widgetVar="startTimeWidget"/>  
+      
+    <h:panelGroup layout="block" style="width:20px;"/>  
+      
+    <h:outputText value="Hora de fin"/>  
+    <pe:timePicker value="#{solicitarTutoria.tutoria.horaFin}" onHourShow="tpEndOnHourShowCallback" mode="popup"  
+                   onMinuteShow="tpEndOnMinuteShowCallback" widgetVar="endTimeWidget"/>  
+                   
+                   
+
+    
+</h:panelGrid>  
+		
+		</fieldset>
+	
+	 <div class="botones">
+		<h:commandButton action="#{solicitarTutoria.guardar()}" value="Guardar" class="btn"/>
+		<h:commandButton action="#{solicitarTutoria.cancelar()}" value="Cancelar" class="btn"/>
+	</div>
+	</h:form>
+
+</html>

@@ -19,7 +19,7 @@
 		<div id="barmenu">
 			<ul>
 				<li><a href="#">Inicio</a></li>
-				<li><a href="listarTutoria.xhtml">Listar Tutorias</a></li>
+				<li><a href="ListarTutoriasServlet">Listar Tutorias</a></li>
 			</ul>
 		</div>
 	</div>

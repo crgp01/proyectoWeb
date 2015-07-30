@@ -19,7 +19,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Tutoria")
-@NamedQueries({ @NamedQuery(name = "ListarSolicitudes", query = "SELECT t.fecha, t.horaInicio, t.horaFin  FROM Tutoria t WHERE t.profesor = :profesor ") })
+//@NamedQueries({ @NamedQuery(name = "ListarSolicitudes", query = "SELECT t.fecha, t.horaInicio, t.horaFin  FROM Tutoria t, Estudiante e WHERE t.username = :username AND u.clave = :clave") })
 public class Tutoria implements Serializable{
 	/**
 	 * 
@@ -41,6 +41,16 @@ public class Tutoria implements Serializable{
 	private Time horaInicio;
 	@Column(name="tut_horaFin")
 	private Time horaFin;
+	@Column(name="tut_tematica")
+	private Time tematica;
+
+	public Time getTematica() {
+		return tematica;
+	}
+
+	public void setTematica(Time tematica) {
+		this.tematica = tematica;
+	}
 
 	public Tutoria(){
 		
