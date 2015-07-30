@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:adm="http://java.sun.com/jsf/composite/administracion_estudiantil">
+
+<h:head></h:head>
+<h:body>
+	<h:form id="frm">
+		<p:growl autoUpdate="true" sticky="false" showDetail="false"></p:growl>
+
+		<p:dataTable
+			emptyMessage="No existen tutorias cuantitativas para mostrar."
+			var="varTutoria" value="#{listarSolicitudes.tutoriasList}"
+			id="dttTutorias">
+
+			<p:column filterBy="#{varTutoria.fecha}" sortBy="#{varTutoria.fecha}">
+				<f:facet name="header">
+					<h:outputText value="Fecha " />
+				</f:facet>
+				<h:outputText value="#{varTutoria.fecha}">
+					<f:convertDateTime pattern="dd-MMM-yyyy" />
+				</h:outputText>
+
+			</p:column>
+
+			<p:column filterBy="#{varTutoria.estudiate.nombre}"
+				sortBy="#{varTutoria.estudiate.nombre}">
+				<f:facet name="header">
+					<h:outputText value="Estudiante" />
+				</f:facet>
+				<h:outputText
+					value="#{varTutoria.estudiate.nombre} #{varTutoria.estudiate.apellido}" />
+			</p:column>
+
+			<p:column filterBy="#{varTutoria.profesor.nombre}"
+				sortBy="#{varTutoria.profesor.nombre}">
+				<f:facet name="header">
+					<h:outputText value="Profesor" />
+				</f:facet>
+				<h:outputText
+					value="#{varTutoria.profesor.nombre} #{varTutoria.profesor.apellido}" />
+			</p:column>
+
+			<p:column filterBy="#{varTutoria.horaInicio}"
+				sortBy="#{varTutoria.horaInicio}">
+				<f:facet name="header">
+					<h:outputText value="Hora inicio" />
+				</f:facet>
+				<h:outputText value="#{varTutoria.horaInicio}">
+					<f:convertDateTime pattern="HH:mm" />
+				</h:outputText>
+			</p:column>
+
+			<p:column filterBy="#{varTutoria.horaFin}"
+				sortBy="#{varTutoria.horaFin}">
+				<f:facet name="header">
+					<h:outputText value="Hora fin" />
+				</f:facet>
+				<h:outputText value="#{varTutoria.horaFin}">
+					<f:convertDateTime pattern="HH:mm" />
+				</h:outputText>
+			</p:column>
+
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Acciones" />
+				</f:facet>
+				<p:commandButton icon="ui-icon-pencil"
+					action="#{tutoriaListarControlador.editar()}">
+					<f:setPropertyActionListener value="#{varTutoria}"
+						target="#{tutoriaListarControlador.tutoria}" />
+				</p:commandButton>
+
+				<p:commandButton icon="ui-icon-trash"
+					action="#{tutoriaListarControlador.borrar()}">
+					<f:setPropertyActionListener value="#{varTutoria}"
+						target="#{tutoriaListarControlador.tutoria}" />
+				</p:commandButton>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+
+</h:body>
+</html>

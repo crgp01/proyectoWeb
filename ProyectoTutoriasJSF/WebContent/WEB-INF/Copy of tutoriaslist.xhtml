@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="plantillas/plantilla.xhtml">
+	<ui:define name="header">
+	    Add your header here or delete to use the default
+	</ui:define>
+	<ui:define name="content">
+	  <h:form> 
+	  	<h:dataTable var="item" value="#{TutoriasListar.tutoriasList}">
+	  		<h:column>
+	  			<f:facet name="header">ID</f:facet>
+	  			<h:outputText value="#{item.id}" ></h:outputText>>
+	  		</h:column>
+	  		<h:column>
+	  			<f:facet name="header">Profesor</f:facet>
+	  			<h:outputText value="#{item.profesor}" ></h:outputText>
+	  		</h:column>
+	  		<h:column>
+	  			<f:facet name="header">Estudiante</f:facet>
+	  			<h:outputText value="#{item.estudiante}" ></h:outputText>
+	  		</h:column>
+	  		<h:column>
+	  			<f:facet name="header">Fecha</f:facet>
+	  			<h:outputText value="#{item.fecha}" ></h:outputText>
+	  		</h:column>
+	  		<h:column>
+	  			<f:facet name="header">Hora de Inicio</f:facet>
+	  			<h:outputText value="#{item.horaInicio}" ></h:outputText>
+	  		</h:column>
+	  		<h:column>
+	  			<f:facet name="header">Hora de Fin</f:facet>
+	  			<h:outputText value="#{item.horaFin}" ></h:outputText>
+	  		</h:column>
+	  	</h:dataTable>
+	  </h:form>
+	</ui:define>
+	
+</ui:composition>
+</html>
