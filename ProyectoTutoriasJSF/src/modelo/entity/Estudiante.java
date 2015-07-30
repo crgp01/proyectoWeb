@@ -20,10 +20,7 @@ public class Estudiante extends Usuario implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="est_codigo")
 	private Integer id;
-	@Column(name="est_nombre")
-	private String nombre;
-	@Column(name="est_apellido")
-	private String apellido;
+	
 	@Column(name="est_correo")
 	private String correo;
 	
@@ -39,28 +36,14 @@ public class Estudiante extends Usuario implements Serializable{
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public String getApellido() {
-		return apellido;
-	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
+	
 	public String getCorreo() {
 		return correo;
 	}
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-	@Override
-	public String toString() {
-		return this.apellido+' '+ this.nombre;
-	}
+	
 	public List<Tutoria> getTutorias() {
 		return tutorias;
 	}

@@ -2,7 +2,7 @@ package ctrl.solicitudes;
 
 import java.util.List;
 
-import javax.annotation.ManagedBean;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import modelo.entity.Tutoria;

@@ -13,10 +13,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Tutoria")
+@NamedQueries({ @NamedQuery(name = "ListarSolicitudes", query = "SELECT t.fecha, t.horaInicio, t.horaFin  FROM Tutoria t, Estudiante e WHERE t.username = :username AND u.clave = :clave") })
 public class Tutoria implements Serializable{
 	/**
 	 * 

@@ -12,7 +12,7 @@
 	</ui:define>
 	<ui:define name="content">
 	  <h:form> 
-	  	<h:dataTable var="item" value="#{listarSolicitudes.tutoriasList}">
+	  	<h:dataTable var="item" value="#{TutoriasListar.tutoriasList}">
 	  		<h:column>
 	  			<f:facet name="header">ID</f:facet>
 	  			<h:outputText value="#{item.id}" ></h:outputText>>
@@ -23,7 +23,7 @@
 	  		</h:column>
 	  		<h:column>
 	  			<f:facet name="header">Estudiante</f:facet>
-	  			<h:outputText value="#{item.estudiate}" ></h:outputText>
+	  			<h:outputText value="#{item.estudiante}" ></h:outputText>
 	  		</h:column>
 	  		<h:column>
 	  			<f:facet name="header">Fecha</f:facet>
@@ -37,15 +37,9 @@
 	  			<f:facet name="header">Hora de Fin</f:facet>
 	  			<h:outputText value="#{item.horaFin}" ></h:outputText>
 	  		</h:column>
-	  		<h:column>
-	  			<f:facet name="header">Hora de Fin</f:facet>
-	  			<h:outputText value="#{item.horaFin}" ></h:outputText>
-	  		</h:column>
 	  	</h:dataTable>
 	  </h:form>
 	</ui:define>
-	<ui:define name="footer">
-	    Add your footer here or delete to use the default
-	</ui:define>
+	
 </ui:composition>
 </html>

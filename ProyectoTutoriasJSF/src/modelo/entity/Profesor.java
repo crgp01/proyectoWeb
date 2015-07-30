@@ -23,10 +23,7 @@ public class Profesor extends Usuario implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="pro_codigo")
 	private Integer id;
-	@Column(name="pro_nombre")
-	private String nombre;
-	@Column(name="pro_apellido")
-	private String apellido;
+	
 	@Column(name="pro_correo")
 	private String correo;
 	
@@ -49,18 +46,7 @@ public class Profesor extends Usuario implements Serializable{
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public String getApellido() {
-		return apellido;
-	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
+	
 	public String getCorreo() {
 		return correo;
 	}
