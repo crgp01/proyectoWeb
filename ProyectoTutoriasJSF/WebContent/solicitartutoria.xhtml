@@ -18,7 +18,15 @@
 		 <p:inputText value="#{solicitarTutoria.tutoria.estudiate.nombre}" /><br/>
 		<h:outputLabel value="Apellido estudiante:: " />
 		 <p:inputText value="#{solicitarTutoria.tutoria.estudiate.apellido}" /><br/>
+		 
+		 <h:outputLabel value="Profesor" />
+		 <p:selectOneMenu id="cboProfesor" value="#{SolicitarTutoriaBean.profesor.id}">
+                <f:selectItem itemLabel="Escoja un profesor" itemValue=""/>
+                <f:selectItem value="#{SolicitarTutoriaBean.profesores}" var="prof"
+                	itemLabel="#{prof.nombre} #{prof.apellido}" itemValue="#{prof.id}"/>
+         </p:selectOneMenu>
 		<h:outputLabel value="Nombre profesor: " />
+		
 		 <p:inputText value="#{solicitarTutoria.tutoria.profesor.nombre}"/><br/>
 		 <h:outputLabel value="Apellido profesor: " />
 		 <p:inputText value="#{solicitarTutoria.tutoria.profesor.apellido}"/><br/>

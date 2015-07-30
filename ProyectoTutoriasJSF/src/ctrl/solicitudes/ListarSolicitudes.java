@@ -16,7 +16,7 @@ import modelo.entity.Tutoria;
 import modelo.entity.Usuario;
 import modelo.jpa.JPADAOFactory;
 
-@ManagedBean
+@ManagedBean(name="ListarSolicitudesBean")
 @SessionScoped
 public class ListarSolicitudes {
 	private List<Tutoria> tutoriasList;
@@ -29,7 +29,7 @@ public class ListarSolicitudes {
 	}
 	//Propiedades
 	public List<Tutoria> getTutoriasList() {
-		tutor = (Tutoria) tutoriaDAO.BuscarporProfesor(profesor);
+		//tutor = (Tutoria) tutoriaDAO.BuscarporProfesor(profesor);
 	//En caso de que la lista no exista
 		if(tutoriasList==null){
 			tutoriasList = JPADAOFactory.getFactory().getTutoriaDAO().find();	
@@ -41,6 +41,9 @@ public class ListarSolicitudes {
 	public void setTutoriasList(List<Tutoria> tutoriasList) {
 		this.tutoriasList = tutoriasList;
 	}
-	
+	//*********Acciones************
+	public void ObtenerListaTutorias(){
+		setTutoriasList(JPADAOFactory.getFactory().getTutoriaDAO().find());
+	}
 	
 }

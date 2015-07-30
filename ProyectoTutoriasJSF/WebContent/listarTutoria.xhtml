@@ -7,8 +7,8 @@
 	xmlns:adm="http://java.sun.com/jsf/composite/administracion_estudiantil">
 
 <h:head>
-<link rel="stylesheet" href="css/estilos.css" />
-<h1 class="titulo">Listar solicitudes</h1>
+	<link rel="stylesheet" href="css/estilos.css" />
+	<h1 class="titulo">Listar solicitudes</h1>
 </h:head>
 <h:body>
 	<h:form id="frm" class="tabla">
@@ -16,73 +16,43 @@
 
 		<p:dataTable
 			emptyMessage="No existen tutorias cuantitativas para mostrar."
-			var="varTutoria" value="#{listarSolicitudes.tutoriasList}"
+			var="varTutoria" value="#{ListarSolicitudesBean.tutoriasList}"
 			id="dttTutorias">
 
-			<p:column filterBy="#{varTutoria.fecha}" sortBy="#{varTutoria.fecha}">
-				<f:facet name="header">
-					<h:outputText value="Fecha " />
-				</f:facet>
+			<p:column headerText="Fecha">
+				
 				<h:outputText value="#{varTutoria.fecha}">
 					<f:convertDateTime pattern="dd-MMM-yyyy" />
 				</h:outputText>
 
 			</p:column>
 
-			<p:column filterBy="#{varTutoria.estudiate.nombre}"
-				sortBy="#{varTutoria.estudiate.nombre}">
-				<f:facet name="header">
-					<h:outputText value="Estudiante" />
-				</f:facet>
+			<p:column headerText="Estudiante">
+				
 				<h:outputText
 					value="#{varTutoria.estudiate.nombre} #{varTutoria.estudiate.apellido}" />
 			</p:column>
 
-			<p:column filterBy="#{varTutoria.profesor.nombre}"
-				sortBy="#{varTutoria.profesor.nombre}">
-				<f:facet name="header">
-					<h:outputText value="Profesor" />
-				</f:facet>
+			<p:column  headerText="Profesor">
+				
 				<h:outputText
 					value="#{varTutoria.profesor.nombre} #{varTutoria.profesor.apellido}" />
 			</p:column>
 
-			<p:column filterBy="#{varTutoria.horaInicio}"
-				sortBy="#{varTutoria.horaInicio}">
-				<f:facet name="header">
-					<h:outputText value="Hora inicio" />
-				</f:facet>
+			<p:column headerText="Hora Inicio">
+				
 				<h:outputText value="#{varTutoria.horaInicio}">
 					<f:convertDateTime pattern="HH:mm" />
 				</h:outputText>
 			</p:column>
 
-			<p:column filterBy="#{varTutoria.horaFin}"
-				sortBy="#{varTutoria.horaFin}">
-				<f:facet name="header">
-					<h:outputText value="Hora fin" />
-				</f:facet>
+			<p:column headerText="Hora Fin">
+				
 				<h:outputText value="#{varTutoria.horaFin}">
 					<f:convertDateTime pattern="HH:mm" />
 				</h:outputText>
 			</p:column>
 
-			<p:column>
-				<f:facet name="header">
-					<h:outputText value="Acciones" />
-				</f:facet>
-				<p:commandButton icon="ui-icon-pencil"
-					action="#{tutoriaListarControlador.editar()}">
-					<f:setPropertyActionListener value="#{varTutoria}"
-						target="#{tutoriaListarControlador.tutoria}" />
-				</p:commandButton>
-
-				<p:commandButton icon="ui-icon-trash"
-					action="#{tutoriaListarControlador.borrar()}">
-					<f:setPropertyActionListener value="#{varTutoria}"
-						target="#{tutoriaListarControlador.tutoria}" />
-				</p:commandButton>
-			</p:column>
 		</p:dataTable>
 	</h:form>
 

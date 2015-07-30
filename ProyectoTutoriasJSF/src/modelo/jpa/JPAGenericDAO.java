@@ -72,7 +72,10 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 	}
 
 	public List<T> find() {
-		return null;
+		em.getTransaction().begin();
+		Query q=em.createQuery("Select e FROM "+ this.persistentClass.getName() +" e");
+		em.getTransaction().commit();
+		return q.getResultList();
 	}
 
 	/**

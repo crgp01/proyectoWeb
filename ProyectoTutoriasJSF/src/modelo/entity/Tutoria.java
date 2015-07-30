@@ -38,20 +38,13 @@ public class Tutoria implements Serializable{
 	@Column(name="tut_fecha")
 	private Date fecha;
 	@Column(name="tut_horaInicio")
-	private Time horaInicio;
+	private String horaInicio;
 	@Column(name="tut_horaFin")
-	private Time horaFin;
+	private String horaFin;
 	@Column(name="tut_tematica")
-	private Time tematica;
+	private String tematica;
 
-	public Time getTematica() {
-		return tematica;
-	}
-
-	public void setTematica(Time tematica) {
-		this.tematica = tematica;
-	}
-
+	
 	public Tutoria(){
 		
 	}
@@ -88,20 +81,29 @@ public class Tutoria implements Serializable{
 		this.fecha = fecha;
 	}
 
-	public Time getHoraInicio() {
+	public String getHoraInicio() {
 		return horaInicio;
 	}
 
-	public void setHoraInicio(Time horaInicio) {
+	public void setHoraInicio(String horaInicio) {
 		this.horaInicio = horaInicio;
 	}
 
-	public Time getHoraFin() {
+	public String getHoraFin() {
 		return horaFin;
 	}
 
-	public void setHoraFin(Time horaFin) {
+	public void setHoraFin(String horaFin) {
 		this.horaFin = horaFin;
 	}
+
+	public String getTematica() {
+		return tematica;
+	}
+
+	public void setTematica(String tematica) {
+		this.tematica = tematica;
+	}
+
 	
 }
