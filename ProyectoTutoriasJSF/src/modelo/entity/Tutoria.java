@@ -19,7 +19,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Tutoria")
-@NamedQueries({ @NamedQuery(name = "ListarSolicitudes", query = "SELECT t.fecha, t.horaInicio, t.horaFin  FROM Tutoria t WHERE t.profesor = :profesor") })
+@NamedQueries({ @NamedQuery(name = "ListarSolicitudes", query = "SELECT t FROM Tutoria t WHERE t.profesor.id = :idprofesor") })
 public class Tutoria implements Serializable{
 	/**
 	 * 

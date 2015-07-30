@@ -18,8 +18,8 @@ public class JPATutoriaDAO extends JPAGenericDAO<Tutoria, Integer>
 
 	@Override
 	public List<Tutoria> BuscarporProfesor(String profesor) {
-		Query q = em.createQuery("SELECT u FROM Usuario u WHERE u.username = :username AND u.clave = :clave");
-		q.setParameter("profesor", profesor);
+		Query q = em.createQuery("SELECT t FROM Tutoria t WHERE t.profesor.id = :idprofesor");
+		q.setParameter("idprofesor", profesor);
 		
 		/*
 		Query q = em.createNamedQuery("BuscarUsuarioClave");
