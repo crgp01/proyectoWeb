@@ -21,8 +21,6 @@ public class Profesor extends Usuario implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="pro_codigo")
-	private Integer id;
 	
 	@Column(name="pro_correo")
 	private String correo;
@@ -40,13 +38,7 @@ public class Profesor extends Usuario implements Serializable{
 	public void setTutorias(List<Tutoria> tutorias) {
 		this.tutorias = tutorias;
 	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	
+
 	public String getCorreo() {
 		return correo;
 	}

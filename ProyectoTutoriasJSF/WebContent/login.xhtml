@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+<link rel="stylesheet" href="css/estilos.css" />
+<h1 class="titulo">Login</h1>
+</h:head>
+<h:body>
+<div class= "panel1">
+	<h:form class= "formulario">
+		<h:outputLabel value="Usuario " /><br/>
+		<p:inputText value="#{autenticar.username}" />
+		<h:outputLabel value="Contraseña " /><br/>
+		<p:inputText value="#{autenticar.password}" />
+	 <div class="botones">
+		<h:commandButton action="#{autenticar.login()}" value="Ingresar" class="btn"/>
+	</div>
+	</h:form>
+</div>
+</h:body>
+</html>

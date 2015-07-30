@@ -25,7 +25,7 @@ public class Principal {
 		em.persist(dep);
 		em.getTransaction().commit();
 		
-		
+		*/
 		Estudiante e = new Estudiante();
 		e.setApellido("jacome");
 		e.setClave("admin");
@@ -36,18 +36,18 @@ public class Principal {
 		
 		JPADAOFactory.getFactory().getEstudianteDAO().create(e);
 		
-		*/
+		
 		Departamento d = new Departamento();
 		d.setNombre("Ingenieria en Sistemas");
 		JPADAOFactory.getFactory().getDepartamentoDAO().create(d);
 		
 		Profesor p = new Profesor();
-		p.setApellido("Hernandez");
-		p.setClave("admin1");
+		p.setApellido("Hernandez1");
+		p.setClave("admin2");
 		p.setCorreo("profesor@gmail.com");
 		p.setDepartamento(d);
 		p.setNombre("Luis");
-		p.setUsername("admin1");
+		p.setUsername("admin2");
 		
 		JPADAOFactory.getFactory().getProfesorDAO().create(p);
 		

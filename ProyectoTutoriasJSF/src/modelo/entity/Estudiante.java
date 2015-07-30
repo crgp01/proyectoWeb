@@ -18,8 +18,6 @@ public class Estudiante extends Usuario implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="est_codigo")
-	private Integer id;
 	
 	@Column(name="est_correo")
 	private String correo;
@@ -29,12 +27,6 @@ public class Estudiante extends Usuario implements Serializable{
 	
 	public Estudiante() {
 		
-	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
 	}
 	
 	public String getCorreo() {

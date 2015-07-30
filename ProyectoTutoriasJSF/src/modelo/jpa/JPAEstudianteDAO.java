@@ -27,14 +27,18 @@ public class JPAEstudianteDAO extends JPAGenericDAO<Estudiante, Integer>
 	}
 
 	@Override
-	public List<Estudiante> getEstudiantesByNombre(String nombre) {
+	public Estudiante getEstudiantesByNombre(String nombre) {
 		// CON NamedQuery
-		Query query = em.createNamedQuery("findAllCustomersWithName");
+		/*Query query = em.createNamedQuery("findAllCustomersWithName");
 		
 		query.setParameter("custName", nombre);
 		@SuppressWarnings("unchecked")
 		List<Estudiante> res3 = query.getResultList();
-		return res3;
+		return res3;*/
+		Query query = em.createNamedQuery("Select e From Estudiante e Where e.nombre= :nombre");
+		query.setParameter("nombre", nombre);
+		
+		return (Estudiante) query.getSingleResult();
 	}
 
 	@Override

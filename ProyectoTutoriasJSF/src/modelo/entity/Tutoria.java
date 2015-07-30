@@ -2,7 +2,7 @@ package modelo.entity;
 
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.sql.Time;
 
 import javax.persistence.Column;
@@ -16,6 +16,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="Tutoria")
@@ -35,6 +37,7 @@ public class Tutoria implements Serializable{
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="cod_estudiante")
 	private Estudiante estudiante;
+	@Temporal(TemporalType.DATE)
 	@Column(name="tut_fecha")
 	private Date fecha;
 	@Column(name="tut_horaInicio")
@@ -43,8 +46,7 @@ public class Tutoria implements Serializable{
 	private String horaFin;
 	@Column(name="tut_tematica")
 	private String tematica;
-<<<<<<< HEAD
-=======
+
 
 	public String getTematica() {
 		return tematica;
@@ -53,7 +55,7 @@ public class Tutoria implements Serializable{
 	public void setTematica(String tematica) {
 		this.tematica = tematica;
 	}
->>>>>>> origin/master
+
 
 	
 	public Tutoria(){
@@ -108,13 +110,6 @@ public class Tutoria implements Serializable{
 		this.horaFin = horaFin;
 	}
 
-	public String getTematica() {
-		return tematica;
-	}
-
-	public void setTematica(String tematica) {
-		this.tematica = tematica;
-	}
-
+	
 	
 }

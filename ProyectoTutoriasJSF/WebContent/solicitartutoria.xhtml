@@ -18,13 +18,6 @@
 			<label for="nombre" class="subtitulo"> Ingrese los siguientes
 				campos: </label><br />
 		</legend>
-		<h:outputLabel value="Nombre estudiante: " />
-		<p:inputText value="#{SolicitarTutoriaBean.tutoria.estudiate.nombre}" />
-		<br />
-		<h:outputLabel value="Apellido estudiante:: " />
-		<p:inputText
-			value="#{SolicitarTutoriaBean.tutoria.estudiate.apellido}" />
-		<br />
 
 		<h:outputLabel value="Profesor" />
 		<h:panelGrid columns="2">
@@ -35,26 +28,21 @@
 			</p:selectOneMenu>
 		</h:panelGrid>
 		<h:outputLabel value="Temática: " />
-		<p:inputTextarea rows="2" cols="24" />
+		<p:inputTextarea rows="2" cols="24" value="#{SolicitarTutoriaBean.tutoria.tematica}"/>
 		<br />
 
 		<h:outputLabel value="Fecha: " />
-		<p:calendar id="mask" value="#{SolicitarTutoria.tutoria.fecha}"
-			pattern="dd-MM-yyyy" mask="true" />
+		<p:calendar id="mask" value="#{SolicitarTutoriaBean.tutoria.fecha}"
+			pattern="dd-mm-yyyy" showOn="button" />
 
 		<h:panelGrid columns="5">
 			<h:outputText value="Hora de Inicio" />
-			<pe:timePicker value="#{SolicitarTutoria.tutoria.horaInicio}"
-				onHourShow="tpStartOnHourShowCallback" mode="popup"
-				onMinuteShow="tpStartOnMinuteShowCallback"
-				widgetVar="startTimeWidget" />
-
-			<h:panelGroup layout="block" style="width:20px;" />
+			<h:inputText value="#{SolicitarTutoriaBean.tutoria.horaInicio}"
+				 />
 
 			<h:outputText value="Hora de fin" />
-			<pe:timePicker value="#{SolicitarTutoria.tutoria.horaFin}"
-				onHourShow="tpEndOnHourShowCallback" mode="popup"
-				onMinuteShow="tpEndOnMinuteShowCallback" widgetVar="endTimeWidget" />
+			<h:inputText value="#{SolicitarTutoriaBean.tutoria.horaFin}"
+				 />
 
 
 
@@ -64,9 +52,9 @@
 	</fieldset>
 
 	<div class="botones">
-		<h:commandButton action="#{solicitarTutoria.guardar()}"
+		<h:commandButton action="#{SolicitarTutoriaBean.guardar()}"
 			value="Guardar" class="btn" />
-		<h:commandButton action="#{solicitarTutoria.cancelar()}"
+		<h:commandButton action="#{SolicitarTutoriaBean.cancelar()}"
 			value="Cancelar" class="btn" />
 	</div>
 </h:form>

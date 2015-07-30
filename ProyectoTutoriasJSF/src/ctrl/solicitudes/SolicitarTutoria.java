@@ -8,6 +8,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import modelo.entity.Estudiante;
 import modelo.entity.Profesor;
 import modelo.entity.Tutoria;
 import modelo.jpa.JPADAOFactory;
@@ -19,8 +20,24 @@ public class SolicitarTutoria {
 	private Profesor profesor;
 	private List<Profesor> profesores = new ArrayList<Profesor>();
 	private Tutoria tutoria;
+	private Estudiante estudiante1;
 	
 	
+	
+	
+	public Estudiante getEstudiante1() {
+		obtenerEstudiante();
+		return estudiante1;
+	}
+
+
+
+	public void setEstudiante1(Estudiante estudiante1) {
+		this.estudiante1 = estudiante1;
+	}
+
+
+
 	public SolicitarTutoria()
 	{
 		
@@ -63,6 +80,8 @@ public class SolicitarTutoria {
 	}
 	public String guardar()
 	{
+		tutoria.setProfesor(this.profesor);
+		tutoria.setEstudiate(this.estudiante1);
 		JPADAOFactory.getFactory().getTutoriaDAO().create(this.tutoria);
 		return "solicitartutoria.xhtml";
 		
@@ -76,6 +95,9 @@ public class SolicitarTutoria {
 	public void ListarProfesores(){
 		setProfesores(JPADAOFactory.getFactory().getProfesorDAO().find());
 	}
-	
+	public void obtenerEstudiante(){
+		setEstudiante1(JPADAOFactory.getFactory().getEstudianteDAO().getEstudiantesByNombre("Pedro"));
+		
+	}
 }
 
