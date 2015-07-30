@@ -43,6 +43,17 @@ public class Tutoria implements Serializable{
 	private String horaFin;
 	@Column(name="tut_tematica")
 	private String tematica;
+<<<<<<< HEAD
+=======
+
+	public String getTematica() {
+		return tematica;
+	}
+
+	public void setTematica(String tematica) {
+		this.tematica = tematica;
+	}
+>>>>>>> origin/master
 
 	
 	public Tutoria(){
