@@ -42,13 +42,13 @@ public class Tutoria implements Serializable{
 	@Column(name="tut_horaFin")
 	private Time horaFin;
 	@Column(name="tut_tematica")
-	private Time tematica;
+	private String tematica;
 
-	public Time getTematica() {
+	public String getTematica() {
 		return tematica;
 	}
 
-	public void setTematica(Time tematica) {
+	public void setTematica(String tematica) {
 		this.tematica = tematica;
 	}
 
