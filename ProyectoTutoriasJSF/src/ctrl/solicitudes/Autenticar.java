@@ -9,6 +9,7 @@ import modelo.entity.Usuario;
 @ManagedBean
 public class Autenticar {
 	public String menu = "menu.jsp";
+	public String login = "login.xhtml";
 	private DAOFactory daoFactory;
 	private UsuarioDAO usuarioDAO;
 	private Usuario user;
@@ -27,7 +28,10 @@ public class Autenticar {
 					+ password);
 			return menu;
 		}
-		return null;
+		else{
+			return login;
+		}
+		
 	}
 
 	public String getUsername() {
